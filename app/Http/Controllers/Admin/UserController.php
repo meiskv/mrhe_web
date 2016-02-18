@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Models\Role;
+use Yajra\Datatables\Datatables;
 
 class UserController extends Controller
 {/**
@@ -17,7 +18,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('admin.users.list', ['users' => User::orderBy('id', 'desc')->paginate(20)]);
+        return view('admin.users.list', ['users' => User::orderBy('id', 'desc')->paginate(1)]);
     }
 
     /**
@@ -122,5 +123,21 @@ class UserController extends Controller
         $user->detachRole($request->input('role'));
 
         return redirect()->route('admin.user.edit', $id)->with('success', 'Success!');
+    }
+
+    public function getIndex()
+    {
+        return view('admin.index');
+    }
+
+    public function anyData()
+    {
+
+        $data = User::all();
+        //return Datatables::of(User::select('*'))->make(true);
+        return Datatables::of($data)
+         ->addColumn('action', function ($user) {
+                return '<a href="user/'.$user->id.'/edit" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a>';})
+        ->make(true);
     }    
 }

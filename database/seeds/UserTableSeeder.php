@@ -12,16 +12,11 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         App\Models\User::create([
-            'name'          => 'John Admin Doe',
-            'email'         => 'admin@admin.com',
-            'password'      => Hash::make('Testing123')
-        ]);
-
-        App\Models\User::create([
-            'name'          => 'Jake Employee Doe',
-            'email'         => 'employee@employee.com',
-            'password'      => Hash::make('Testing123')
-        ]);        
+            'firstname'          => 'Fareed',
+            'lastname'          => 'Micropolis',
+            'email'         => 'admin@micropolis.com',
+            'password'      => Hash::make('12345')
+        ]);    
 
         $this->command->info('User table seeded!');
     }

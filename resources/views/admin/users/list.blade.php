@@ -15,15 +15,18 @@
                                       <th class="col-md-1">#</th>
                                       <th class="col-md-2">Name</th>
                                       <th class="col-md-2">Email</th>
+                                      <th class="col-md-2">Emergency No</th>
                                       <th class="col-md-2">Role</th>
                                       <th class="col-md-1">Created</th>
                                       <th class="col-md-2">Actions</th>
                                     </tr>
+                                    
                                     @foreach($users as $user)
                                         <tr>
                                           <td>{{$user->id}}</td>
-                                          <td><a href="{{route('admin.user.edit', $user->id)}}">{{$user->name}}</a></td>
+                                          <td><a href="{{route('admin.user.edit', $user->id)}}">{{$user->firstname}} {{$user->lastname}}</a></td>
                                           <td>{{$user->email}}</td>
+                                          <td>{{$user->emergency_no}}</td>
                                           <td>
                                               @foreach($user->roles as $role)
                                                 <span class="label label-success">{{$role->name}}</span>
@@ -49,4 +52,49 @@
             </div>
         </section>
     </div>
+
+  <hr/>`
+<table class="table table-bordered" id="users-table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th>Email</th>
+                <th>Email</th>
+                <th>Email</th>
+                <th>Email</th>
+                <th>Created At</th>
+                <th>Updated At</th>
+                <th>Action</th>
+
+            </tr>
+        </thead>
+</table>
+@endsection
+
+@section('footer')
+<script>
+  $(function() {
+      $('#users-table').DataTable({
+          processing: true,
+          serverSide: true,
+          ajax: '{!! route('datatables.data') !!}',
+          columns: [
+              { data: 'id', name: 'id' },
+              { data: 'land_number_id', name: 'land_number_id' },
+              { data: 'property_no', name: 'property_no' },
+              { data: 'land_area', name: 'land_area' },
+              { data: 'property_area', name: 'property_area' },
+              { data: 'no_of_bedroom', name: 'no_of_bedroom' },
+              { data: 'no_of_bathroom', name: 'no_of_bathroom' },
+              { data: 'total_built_area', name: 'total_built_area' },
+              { data: 'created_at', name: 'created_at' },
+              { data: 'updated_at', name: 'updated_at' },
+              {data: 'action', name: 'action'}
+          ]
+      });
+  });
+</script>
 @endsection

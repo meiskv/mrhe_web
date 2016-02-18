@@ -1,3 +1,4 @@
+
 <!-- Left side column. contains the sidebar -->
 <aside class="main-sidebar">
   <!-- sidebar: style can be found in sidebar.less -->
@@ -8,7 +9,9 @@
         <img src="{{asset('img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
       </div>
       <div class="pull-left info">
-        <p>Alexander Pierce</p>
+        <p>
+         {{ $user->firstname }} {{ $user->lastname }}
+        </p>
         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
       </div>
     </div>
@@ -49,10 +52,15 @@
           <li><a href="{{route('admin.role.create')}}"><i class="fa fa-plus"></i> Add a role</a></li>
         </ul>
       </li>
-      <li class="header">LABELS</li>
-      <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-      <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-      <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>      
+      <li class="treeview @if(request()->segment(2) == 'post') active @endif">
+        <a href="#">
+          <i class="fa fa-dashboard"></i> <span>Posts</span> <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="{{route('admin.post.index')}}"><i class="fa fa-circle-o"></i> List Posts</a></li>
+          <li><a href="{{route('admin.post.create')}}"><i class="fa fa-plus"></i> Add a post</a></li>
+        </ul>
+      </li>           
       @endrole
     </ul>
   </section>

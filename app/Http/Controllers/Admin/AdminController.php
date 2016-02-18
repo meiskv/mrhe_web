@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 
 class AdminController extends Controller
 {
@@ -16,6 +17,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard');
+        $user = User::find(1);
+        return view('admin.dashboard',$user);
     }
 }
