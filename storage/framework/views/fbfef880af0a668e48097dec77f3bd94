@@ -1,0 +1,50 @@
+<?php $__env->startSection('content'); ?>
+    <div class="content-wrapper">
+        <section class="content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box">
+                        <div class="box-header">
+                            <h3 class="box-title">posts</h3>
+                        </div><!-- /.box-header -->
+                        <div class="box-body no-padding">
+                            <?php if($posts): ?>
+                                <table class="table">
+                                    <tr>
+                                      <th class="col-md-1">#</th>
+                                      <th class="col-md-2">Title</th>
+                                      <th class="col-md-2">Description
+                                      <th class="col-md-2">Status</th>
+                                      <th class="col-md-1">Created</th>
+                                      <th class="col-md-2">Actions</th>
+                                    </tr>
+                                    <?php foreach($posts as $post): ?>
+                                        <tr>
+                                          <td><?php echo e($post->id); ?></td>
+                                          <td><a href="<?php echo e(route('admin.post.edit', $post->id)); ?>"><?php echo e($post->name); ?></a></td>
+                                          <td><?php echo e($post->description); ?></td>
+                                          <td><?php echo e($post->status); ?></td>
+                                          <td><?php echo e($post->created_at->format('d M Y')); ?></td>
+                                          <td>
+                                                <?php echo Form::open(['url' => route('admin.post.destroy', $post->id), 'method' => 'delete' ]); ?>
+
+                                                    <a href="<?php echo e(route('admin.post.edit', $post->id)); ?>" class="btn btn-sml btn-primary"><i class="fa fa-pencil"></i> Edit</a>
+                                                    <button type="submit" class="btn btn-sml btn-danger" onClick="return confirm('Are you sure you want to delete?')"><i class="fa fa-timex"></i> Delete</button>
+                                                <?php echo Form::close(); ?>
+
+                                          </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </table>
+                            <?php else: ?>
+                                <p class="alert alert-warning">No posts to show</p>
+                            <?php endif; ?>
+                        </div><!-- /.box-body -->
+                        <?php echo $__env->make('admin.template.pagination', ['pages' => $posts], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>                        
+                    </div><!-- /.box -->
+                </div>
+            </div>
+        </section>
+    </div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.template.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

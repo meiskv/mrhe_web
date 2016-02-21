@@ -1,0 +1,68 @@
+<!-- sidebar menu -->
+                      <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+
+                          <div class="menu_section">
+                              <h3>General</h3>
+                              <ul class="nav side-menu">
+                                <?php if (Auth::check() && Auth::user()->is('admin')): ?>
+                                  <li><a><i class="fa fa-home"></i> Dashboard <span class="fa fa-chevron-down"></span></a>
+                                      <ul class="nav child_menu" style="display: none">
+                                          <li><a href="<?php echo e(url('admin')); ?>">Dashboard</a></li>
+                                      </ul>
+                                  </li>
+                                  <li><a><i class="fa fa-users"></i> Users <span class="fa fa-chevron-down"></span></a>
+                                      <ul class="nav child_menu" style="display: none">
+                                          <li><a href="<?php echo e(route('admin.user.index')); ?>">List User</a>
+                                      </ul>
+                                  </li>
+                                  <li><a><i class="fa fa-users"></i> User Roles <span class="fa fa-chevron-down"></span></a>
+                                      <ul class="nav child_menu" style="display: none">
+                                          <li><a href="<?php echo e(url('admin')); ?>">Add Roles</a>
+                                          <li><a href="<?php echo e(url('admin')); ?>">List Roles</a>
+                                      </ul>
+                                  </li>
+                                  <li><a><i class="fa fa-newspaper-o"></i> Announcements <span class="fa fa-chevron-down"></span></a>
+                                      <ul class="nav child_menu" style="display: none">
+                                          <li><a href="<?php echo e(url('admin')); ?>">Add Announcement</a>
+                                          <li><a href="<?php echo e(url('admin')); ?>">History</a>
+                                          </li>
+                                      </ul>
+                                  </li>
+                                  <li><a><i class="fa fa-cogs"></i> Maintenance Reports <span class="fa fa-chevron-down"></span></a>
+                                      <ul class="nav child_menu" style="display: none">
+                                          <li><a href="<?php echo e(url('admin')); ?>">Add New Request</a>
+                                          <li><a href="<?php echo e(url('admin')); ?>">In Progress Requests</a>
+                                          <li><a href="<?php echo e(url('admin')); ?>">Accomplished Requests</a>
+                                          </li>
+                                      </ul>
+                                  </li>
+                                  <li><a><i class="fa fa-info-circle"></i> Informations <span class="fa fa-chevron-down"></span></a>
+                                      <ul class="nav child_menu" style="display: none">
+                                          <li><a href="<?php echo e(url('admin')); ?>">FAQ</a>
+                                          <li><a href="<?php echo e(url('admin')); ?>">Manual</a>
+                                          <li><a href="<?php echo e(url('admin')); ?>">Phone Book</a>
+                                          <li><a href="<?php echo e(url('admin')); ?>">Diamond Developers</a>
+                                          <li><a href="<?php echo e(url('admin')); ?>">The Sustainable City</a>
+                                          </li>
+                                      </ul>
+                                  </li>
+                                  <li><a><i class="fa fa-recycle"></i> S.E.E <span class="fa fa-chevron-down"></span></a>
+                                      <ul class="nav child_menu" style="display: none">
+                                          <li><a href="<?php echo e(url('admin')); ?>">Social</a>
+                                          <li><a href="<?php echo e(url('admin')); ?>">Environmental</a>
+                                          <li><a href="<?php echo e(url('admin')); ?>">Economic</a>
+                                          </li>
+                                      </ul>
+                                  </li>
+                                  <li><a><i class="fa fa-envelope-o"></i> InMail <span class="fa fa-chevron-down"></span></a>
+                                      <ul class="nav child_menu" style="display: none">
+                                          <li><a href="<?php echo e(url('admin')); ?>">Inbox</a>
+                                          <li><a href="<?php echo e(url('admin')); ?>">Compose</a>
+                                          </li>
+                                      </ul>
+                                  </li>
+                                <?php endif; ?>
+                              </ul>
+                          </div>
+                      </div>
+                      <!-- /sidebar menu -->
