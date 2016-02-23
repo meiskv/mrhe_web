@@ -5,7 +5,7 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h2>Creating Data<small>Datas</small></h2>
+                                    <h2>Creating Data<small>for Oud Al Muteena 397 & 500</small></h2>
                                     <div class="clearfix"></div>
                                 </div>
                 <div class="box-body">

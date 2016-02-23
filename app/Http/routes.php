@@ -15,8 +15,6 @@ Route::get('/', function () {
     return redirect()->to('admin');
 });
 
-
-
 Route::group(['prefix' => 'admin', 'middleware' => ['auth'] ], function () {
 
 
@@ -25,11 +23,23 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'] ], function () {
 
     Route::group(['middleware' => ['role:admin']], function()
     {	
-        Route::resource('user','Admin\UserController');
+        /* User Route & Controller */
+        Route::resource('user','Admin\UserController',
+            ['only'=>['edit','store','update','create','destroy','index']]
+            );
+        Route::controller('user', 'Admin\UserController', [
+            'anyData'  => 'users.data',
+        ]);
+        /* ----User Route End---- */
+
+        
+
         Route::resource('role','Admin\RoleController');
         Route::resource('post','Admin\PostController');
 
+    });
 
+    /* User Muhesnah & Controller */
        Route::resource('muhesnah','Admin\MuhesnahController',
             ['only'=>['edit','store','update','create']]
             );
@@ -38,9 +48,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'] ], function () {
             'anyData'  => 'muhesnah.data',
             'getIndex' => 'muhesnah',
         ]);
+        /* ----Muhesnah Route End---- */
 
-
-
+        /* Data Route & Controller */
         Route::resource('data','Admin\TableController',
             ['only'=>['edit','store','update','create','pogiAkoEh']]
             );
@@ -49,10 +59,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'] ], function () {
             'anyData'  => 'datatables.data',
             'getIndex' => 'datatables',
         ]);
-
-    });
-
-    
+        /* ----Data Route End---- */
 
 });
 

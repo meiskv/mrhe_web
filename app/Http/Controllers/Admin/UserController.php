@@ -40,17 +40,24 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
+            'firstname'         => 'required',
+            'lastname'         => 'required',
             'email'         => 'required|email|unique:users',
             'password'      => 'required|min:8'
         ]);
 
         $data = [
-            'name'      => $request->input('name'),
-            'email'     => $request->input('email'),
-            'password'  => Hash::make($request->input('password'))
+            'firstname'        => $request->input('firstname'),
+            'lastname'           => $request->input('lastname'),
+            'email'             => $request->input('email'),
+            'password'         => bcrypt($request->input('password'))
         ];
 
-        User::create($data);
+        $newUser = User::create($data);
+        
+        //SYNC THE USER TO THE ROLE
+        $user = User::find($newUser->id);
+        $user->roles()->sync([$request->input('role')]);
 
         return redirect()->route('admin.user.index')->with('success', 'Successfully created!');
     }
@@ -63,8 +70,12 @@ class UserController extends Controller
      */
     public function edit($id)
     {
+
+        // $data = User::find($id);
+        // return view('admin.users.edit', compact('data'));
+
         return view('admin.users.edit', [
-                                            'user'          => User::find($id),
+                                            'data'          => User::find($id),
                                             'roles'         => Role::all(),
                                             'user_role'     => User::find($id)->roles()->first()
                                         ]);
@@ -123,11 +134,6 @@ class UserController extends Controller
         $user->detachRole($request->input('role'));
 
         return redirect()->route('admin.user.edit', $id)->with('success', 'Success!');
-    }
-
-    public function getIndex()
-    {
-        return view('admin.index');
     }
 
     public function anyData()

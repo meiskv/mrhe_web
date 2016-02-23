@@ -1,28 +1,30 @@
 @extends('admin.template.main')
 @section('content')
-    <div class="content-wrapper">
-        <!-- Main content -->
-        <section class="content">
-          <div class="row">
-            <!-- left column -->
-            <div class="col-md-12">
-              <div class="box box-warning">
-                <div class="box-header with-border">
-                  <h3 class="box-title">User details</h3>
-                </div><!-- /.box-header -->
+           <div class="clearfix"></div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="x_panel">
+                                <div class="x_title">
+                                    <h2>Edit User<small></small></h2>
+                                    <div class="clearfix"></div>
+                                </div>
                 <div class="box-body">
                     @include('messages')
-                    {!!Form::open(['url' => route('admin.user.update', $user->id), 'method' => 'put', 'role' => 'form'])!!}
+                    {!!Form::open(['url' => route('admin.user.update', $data->id), 'method' => 'put', 'role' => 'form'])!!}
                         <!-- text input -->
                         <div class="form-group">
-                          <label>Name</label>
-                          <input name="name" type="text" class="form-control" placeholder="Your name" value="{{$user->name}}">
+                          <label>First Name</label>
+                          <input name="name" type="text" class="form-control" placeholder="Your name" value="{{$data->firstname}}">
+                        </div>
+                        <div class="form-group">
+                          <label>Last Name</label>
+                          <input name="name" type="text" class="form-control" placeholder="Your name" value="{{$data->lastname}}">
                         </div>
                         <div class="form-group">
                           <label>Email</label>
                           <div class="input-group">
                               <span class="input-group-addon">@</span>
-                              <input name="email" type="email" class="form-control" placeholder="Your email" value="{{$user->email}}">
+                              <input name="email" type="email" class="form-control" placeholder="Your email" value="{{$data->email}}">
                           </div>
                         </div>
                         <div class="form-group">
@@ -36,15 +38,12 @@
                                     <option @if($user_role->id == $role->id) selected="selected" @endif value="{{$role->id}}">{{$role->name}}</option>
                                 @endforeach
                           </select>
-                        </div>                        
-
+                        </div>
                         <a href="{{route('admin.user.index')}}" class="btn btn-default">Back</a>
                         <button type="submit" class="btn btn-sml btn-primary">Update</button>
                     {!!Form::close()!!}
                 </div><!-- /.box-body -->
-              </div><!-- /.box -->                
-             </div>
-          </div>   <!-- /.row -->
-        </section><!-- /.content -->
-    </div>
+              </div>  
+              </div>  
+              </div>  
 @endsection
