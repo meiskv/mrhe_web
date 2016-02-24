@@ -28,7 +28,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.users.create');
+        return view('admin.users.create', ['roles' => Role::all()]);
     }
 
     /**
@@ -54,7 +54,7 @@ class UserController extends Controller
         ];
 
         $newUser = User::create($data);
-        
+
         //SYNC THE USER TO THE ROLE
         $user = User::find($newUser->id);
         $user->roles()->sync([$request->input('role')]);
@@ -91,11 +91,14 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
+            'firstname'     => 'required',
+            'lastname'      => 'required',
             'email'         => 'required|email'
         ]);
 
         $user           = User::find($id);
-        $user->name     = $request->input('name');
+        $user->firstname     = $request->input('firstname');
+        $user->lastname     = $request->input('lastname');
         $user->email    = $request->input('email');
 
         if ($request->has('password')) {

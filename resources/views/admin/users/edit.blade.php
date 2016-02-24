@@ -14,11 +14,11 @@
                         <!-- text input -->
                         <div class="form-group">
                           <label>First Name</label>
-                          <input name="name" type="text" class="form-control" placeholder="Your name" value="{{$data->firstname}}">
+                          <input name="firstname" type="text" class="form-control" placeholder="Your name" value="{{$data->firstname}}">
                         </div>
                         <div class="form-group">
                           <label>Last Name</label>
-                          <input name="name" type="text" class="form-control" placeholder="Your name" value="{{$data->lastname}}">
+                          <input name="lastname" type="text" class="form-control" placeholder="Your name" value="{{$data->lastname}}">
                         </div>
                         <div class="form-group">
                           <label>Email</label>
