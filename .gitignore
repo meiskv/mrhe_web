@@ -3,5 +3,4 @@
 /bower_components
 Homestead.yaml
 Homestead.json
-.gitignore
 .env
