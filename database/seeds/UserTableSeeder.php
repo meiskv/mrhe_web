@@ -16,6 +16,12 @@ class UserTableSeeder extends Seeder
             'lastname'          => 'Micropolis',
             'email'         => 'admin@micropolis.com',
             'password'      => Hash::make('12345')
+        ]);
+        App\Models\User::create([
+            'firstname'          => 'Mikhail',
+            'lastname'          => 'Villamor',
+            'email'         => 'mikhail.villamor@micropolis.com',
+            'password'      => Hash::make('1234567890')
         ]);    
 
         $this->command->info('User table seeded!');

@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\Muhesnah;
+use App\Models\Qouz;
 use Yajra\Datatables\Datatables;
 
-class MuhesnahController extends Controller
+class QouzController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +18,7 @@ class MuhesnahController extends Controller
      */
     public function index()
     {
-        return view('admin.muhesnah.list');
+        return view('admin.qouz.list');
     }
 
     /**
@@ -28,7 +28,7 @@ class MuhesnahController extends Controller
      */
     public function create()
     {
-        return view('admin.muhesnah.create');
+         return view('admin.qouz.create');
     }
 
     /**
@@ -42,10 +42,10 @@ class MuhesnahController extends Controller
         $this->validate($request, [
             'apartment_code'        => 'required',
             'building_no'           => 'required',
-            'apartment_no'           => 'required',
+            'apartment_no'             => 'required',
             'no_of_bedrooms'         => 'required',
-            'floor_no'         => 'required',
             'no_of_bathrooms'         => 'required',
+            'floor_no'         => 'required',
             'area'        => 'required',
             'balcony'      => 'required'
         ]);
@@ -53,17 +53,17 @@ class MuhesnahController extends Controller
         $data = [
             'apartment_code'        => $request->input('apartment_code'),
             'building_no'           => $request->input('building_no'),
-            'apartment_no'          => $request->input('apartment_no'),
-            'no_of_bedrooms'        => $request->input('no_of_bedrooms'),
-            'floor_no'              => $request->input('floor_no'),
-            'no_of_bathrooms'       => $request->input('no_of_bathrooms'),
-            'area'                  => $request->input('area'),
-            'balcony'               => $request->input('balcony')
+            'apartment_no'             => $request->input('apartment_no'),
+            'no_of_bedrooms'         => $request->input('no_of_bedrooms'),
+            'floor_no'         => $request->input('floor_no'),
+            'no_of_bathrooms'         => $request->input('no_of_bathrooms'),
+            'area'        => $request->input('area'),
+            'balcony'      => $request->input('balcony')
         ];
 
-        Muhesnah::create($data);
+        Qouz::create($data);
 
-        return redirect()->route('muhesnah')->with('success', 'Successfully created!');
+        return redirect()->route('admin.qouz.index')->with('success', 'Successfully created!');
     }
 
     /**
@@ -85,14 +85,14 @@ class MuhesnahController extends Controller
      */
     public function edit($id)
     {
-        $muhesnah = Muhesnah::find($id);
+        $qouz = Qouz::find($id);
         // return view('admin.data.edit', [
         //                                     'user'          => User::find($id),
         //                                     'roles'         => Role::all(),
         //                                     'user_role'     => User::find($id)->roles()->first(),
         //                                     'table'         => Table::find($id)
         //                                 ]);
-        return view('admin.muhesnah.edit',compact('muhesnah'));
+        return view('admin.qouz.edit',compact('qouz'));
     }
 
     /**
@@ -104,7 +104,7 @@ class MuhesnahController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
+         $this->validate($request, [
             'apartment_code'        => 'required',
             'building_no'           => 'required',
             'apartment_no'          => 'required',
@@ -115,7 +115,7 @@ class MuhesnahController extends Controller
             'balcony'               => 'required'
         ]);
 
-        $table                      = Muhesnah::find($id);
+        $table                      = Qouz::find($id);
         $table->apartment_code      = $request->input('apartment_code');
         $table->building_no         = $request->input('building_no');
         $table->apartment_no        = $request->input('apartment_no');
@@ -130,7 +130,7 @@ class MuhesnahController extends Controller
         $table->updated_at = date('Y-m-d');
         $table->save();
 
-        return redirect()->route('muhesnah')->with('success', 'Successfully updated!');
+        return redirect()->route('admin.qouz.index')->with('success', 'Successfully updated!');
     }
 
     /**
@@ -144,19 +144,14 @@ class MuhesnahController extends Controller
         //
     }
 
-    public function getIndex()
-    {
-        return view('admin.muhesnah.list');
-    }
-
     public function anyData()
     {
 
-        $data = Muhesnah::all();
+        $data = Qouz::all();
         //return Datatables::of(User::select('*'))->make(true);
         return Datatables::of($data)
          ->addColumn('action', function ($user) {
-                return '<a href="muhesnah/'.$user->id.'/edit" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a>';})
+                return '<a href="qouz/'.$user->id.'/edit" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a>';})
         ->make(true);
-    }    
+    } 
 }

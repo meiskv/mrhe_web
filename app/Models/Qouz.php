@@ -4,14 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Muhesnah extends Model
+class Qouz extends Model
 {
-    /**
-     * The table associated with the model.
-     *
-     * @var string
-     */
-    protected $table = 'muhesnah';
+    protected $table = 'qouz';
 
     protected $fillable = [
     'apartment_code',

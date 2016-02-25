@@ -32,14 +32,23 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'] ], function () {
         ]);
         /* ----User Route End---- */
 
-        
-
         Route::resource('role','Admin\RoleController');
         Route::resource('post','Admin\PostController');
 
     });
 
-    /* User Muhesnah & Controller */
+        /* User Qouz & Controller */
+       Route::resource('qouz','Admin\QouzController',
+            ['only'=>['edit','store','update','create','index']]
+            );
+
+        Route::controller('qouz', 'Admin\QouzController', [
+            'anyData'  => 'qouz.data',
+            'getIndex' => 'qouz',
+        ]);
+        /* ----Qouz Route End---- */
+
+        /* User Muhesnah & Controller */
        Route::resource('muhesnah','Admin\MuhesnahController',
             ['only'=>['edit','store','update','create']]
             );
@@ -52,7 +61,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'] ], function () {
 
         /* Data Route & Controller */
         Route::resource('data','Admin\TableController',
-            ['only'=>['edit','store','update','create','pogiAkoEh']]
+            ['only'=>['edit','store','update','create']]
             );
 
         Route::controller('data', 'Admin\TableController', [
@@ -60,6 +69,17 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'] ], function () {
             'getIndex' => 'datatables',
         ]);
         /* ----Data Route End---- */
+
+        /* Muteena Route & Controller */
+        Route::resource('muteena','Admin\MuteenaController',
+            ['only'=>['edit','store','update','create']]
+            );
+
+        Route::controller('muteena', 'Admin\MuteenaController', [
+            'anyData'  => 'muteena.data',
+            'getIndex' => 'muteena',
+        ]);
+        /* ----Muteena Route End---- */
 
 });
 

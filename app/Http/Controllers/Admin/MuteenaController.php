@@ -10,34 +10,30 @@ use App\Models\User;
 use App\Models\Role;
 use App\Models\Table;
 use App\Models\Land;
+use App\Models\Muteena;
 use Yajra\Datatables\Datatables;
 
-class TableController extends Controller
+class MuteenaController extends Controller
 {
 
     public function index()
     {
-        return view('admin.data.list');
+        return view('admin.muteena.list');
     }
 
     public function edit($id)
     {
-        $table = Table::find($id);
+        $muteena = Muteena::find($id);
         $user = User::find($id);
         $land = Land::all();
-        // return view('admin.data.edit', [
-        //                                     'user'          => User::find($id),
-        //                                     'roles'         => Role::all(),
-        //                                     'user_role'     => User::find($id)->roles()->first(),
-        //                                     'table'         => Table::find($id)
-        //                                 ]);
-        return view('admin.data.edit',compact('table','user','land'));
+
+        return view('admin.muteena.edit',compact('muteena','user','land'));
     }
 
     public function create()
     {
         $land = Land::all();
-        return view('admin.data.create',compact('land'));
+        return view('admin.muteena.create',compact('land'));
     }
 
     public function store(Request $request)
@@ -62,9 +58,9 @@ class TableController extends Controller
             'total_built_area'      => $request->input('total_built_area')
         ];
 
-        Table::create($data);
+        Muteena::create($data);
 
-        return redirect()->route('datatables')->with('success', 'Successfully created!');
+        return redirect()->route('muteena')->with('success', 'Successfully created!');
     }
 
     public function update(Request $request, $id)
@@ -79,7 +75,7 @@ class TableController extends Controller
             'total_built_area'      => 'required'
         ]);
 
-        $table           = Table::find($id);
+        $table           = Muteena::find($id);
         $table->land_number_id      = $request->input('land_number_id');
         $table->property_no         = $request->input('property_no');
         $table->land_area           = $request->input('land_area');
@@ -93,22 +89,22 @@ class TableController extends Controller
         $table->updated_at = date('Y-m-d');
         $table->save();
 
-        return redirect()->route('datatables')->with('success', 'Successfully updated!');
+        return redirect()->route('muteena')->with('success', 'Successfully updated!');
     }
 
     public function getIndex()
     {
-        return view('admin.data.list');
+        return view('admin.muteena.list');
     }
 
     public function anyData()
     {
 
-        $data = Table::all();
+        $data = Muteena::all();
         //return Datatables::of(User::select('*'))->make(true);
         return Datatables::of($data)
          ->addColumn('action', function ($user) {
-                return '<a href="data/'.$user->id.'/edit" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a>';})
+                return '<a href="muteena/'.$user->id.'/edit" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a>';})
         ->make(true);
     }    
 }

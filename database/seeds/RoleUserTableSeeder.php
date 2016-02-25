@@ -19,7 +19,7 @@ class RoleUserTableSeeder extends Seeder
         ]);
 
         App\Models\Role_User::create([
-            'role_id'           => 1,
+            'role_id'           => 2,
             'user_id'           => 2
         ]);
 
