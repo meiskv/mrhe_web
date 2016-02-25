@@ -24,7 +24,7 @@
                                           <li><a href="{{route('muteena')}}">List Data</a>
                                       </ul>
                                   </li>
-                                  <li><a><i class="fa fa-building"></i>Al Muhesna<span class="fa fa-chevron-down"></span></a>
+                                  <li><a><i class="fa fa-building"></i>Al Muhesnah<span class="fa fa-chevron-down"></span></a>
                                       <ul class="nav child_menu" style="display: none">
                                           <li><a href="{{ route('admin.muhesnah.create') }}">Create Data</a>
                                           <li><a href="{{ route('muhesnah') }}">List Data</a>

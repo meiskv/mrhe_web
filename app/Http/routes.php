@@ -87,4 +87,8 @@ Route::group(['prefix' => 'api/v1' ], function () {
     Route::resource('user','Api\UserApiController');
 });
 
+Route::group(['prefix' => 'api/muteena300' ], function () {
+    Route::resource('data','Api\Muteena300Controller');
+});
+
 Route::controllers(['auth' => 'Auth\AuthController']);
