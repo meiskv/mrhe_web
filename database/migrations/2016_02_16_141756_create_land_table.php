@@ -15,6 +15,8 @@ class CreateLandTable extends Migration
           Schema::create('land', function (Blueprint $table) {
             $table->increments('id');
             $table->string('land_number');
+            $table->string('type');
+            $table->string('style');
             $table->timestamps();
         });
     }
