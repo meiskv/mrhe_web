@@ -10,6 +10,7 @@ use App\Models\User;
 use App\Models\Table;
 use Hash;
 use Validator;
+use DB;
 
 class Muteena300Controller extends Controller
 {
@@ -31,13 +32,20 @@ class Muteena300Controller extends Controller
      */
     public function show($id)
     {
-        if (!Table::find($id)){
+        // $a = Table::where('id', $id)->get();
+        // $a;
+
+        // $b = Table::find($id);
+        // echo dd($b);
+
+        $data = Table::where('land_number_id', $id)->first();
+        
+
+        if (!$data){
             //return response()->json(['error' => ['code' => '404', 'message' => 'Data not found!']]);
             echo "Data not found!";
         }else{
             //return response()->json(['data' => Table::find($id)]);
-            $data = Table::find($id);
-
              echo 'Search Completed';
              echo "|";
              echo $data['land_number_id'];
