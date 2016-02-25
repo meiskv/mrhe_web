@@ -17,7 +17,6 @@ class CreateLandTable extends Migration
             $table->string('land_number');
             $table->string('type');
             $table->string('style');
-            $table->timestamps();
         });
     }
 
