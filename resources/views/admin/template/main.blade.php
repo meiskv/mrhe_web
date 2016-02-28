@@ -19,6 +19,7 @@
 
     <!-- Custom styling plus plugins -->
     <link href="{{ URL::asset('main/css/custom.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('main/css/mrhe.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('main/css/maps/jquery-jvectormap-2.0.1.css') }}" />
     <link href="{{ URL::asset('main/css/icheck/flat/green.css') }}" rel="stylesheet" />
     <link href="{{ URL::asset('main/css/floatexamples.css') }}" rel="stylesheet" type="text/css" />
