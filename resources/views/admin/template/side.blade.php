@@ -9,8 +9,8 @@
                                 @role('admin')
                                 <li><a><i class="fa fa-users"></i>Users<span class="fa fa-chevron-down"></span></a>
                                       <ul class="nav child_menu" style="display: none">
-                                          <li><a href="{{route('admin.user.create')}}">Create Data</a>
-                                          <li><a href="{{route('admin.user.index')}}">List Data</a>
+                                          <li><a href="{{route('admin.user.create')}}">Create User</a>
+                                          <li><a href="{{route('admin.user.index')}}">All Users</a>
                                       </ul>
                                   </li>
                                 @endrole
