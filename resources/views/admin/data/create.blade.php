@@ -1,5 +1,6 @@
 @extends('admin.template.main')
 @section('content')
+@section('title', 'Al Muteena 397')
                 <div class="clearfix"></div>
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
@@ -23,27 +24,27 @@
                         </div>
                         <div class="form-group">
                           <label>Property No.</label>
-                          <input name="property_no" type="text" class="form-control" placeholder="Your property number" value="">
+                          <input name="property_no" type="text" class="form-control" value="">
                         </div>
                         <div class="form-group">
                           <label>Land Area</label>
-                          <input name="land_area" type="text" class="form-control" placeholder="Your land area" value="">
+                          <input name="land_area" type="text" class="form-control" value="">
                         </div>
                         <div class="form-group">
                           <label>Property Area</label>
-                          <input name="property_area" type="text" class="form-control" placeholder="Your property area" value="">
+                          <input name="property_area" type="text" class="form-control" value="">
                         </div>
                         <div class="form-group">
                           <label>No. of Bedrooms</label>
-                          <input name="no_of_bedroom" type="text" class="form-control" placeholder="Your number of bedrooms" value="">
+                          <input name="no_of_bedroom" type="text" class="form-control" value="">
                         </div>
                         <div class="form-group">
                           <label>No. of Bathrooms</label>
-                          <input name="no_of_bathroom" type="text" class="form-control" placeholder="Your number of bathrooms" value="">
+                          <input name="no_of_bathroom" type="text" class="form-control" value="">
                         </div>
                         <div class="form-group">
                           <label>Total Built Area</label>
-                          <input name="total_built_area" type="text" class="form-control" placeholder="Your total built area" value="">
+                          <input name="total_built_area" type="text" class="form-control" value="">
                         </div>
                         <a href="{{route('datatables')}}" class="btn btn-default">Back</a>
                         <button type="submit" class="btn btn-sml btn-primary">Submit</button>

@@ -1,6 +1,6 @@
 @extends('admin.template.main')
 @section('content')
-
+@section('title', 'Users')
     <div class="clearfix"></div>
                     <div class="row">
                     @include('messages')

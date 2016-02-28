@@ -1,5 +1,6 @@
 @extends('admin.template.main')
 @section('content')
+@section('title', 'Al Muteena 500')
                 <div class="clearfix"></div>
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
@@ -23,27 +24,27 @@
                         </div>
                         <div class="form-group">
                           <label>Property No.</label>
-                          <input name="property_no" type="text" class="form-control" placeholder="Your property number" value="{{ Input::old('property_no') }}">
+                          <input name="property_no" type="text" class="form-control" value="{{ Input::old('property_no') }}">
                         </div>
                         <div class="form-group">
                           <label>Land Area</label>
-                          <input name="land_area" type="text" class="form-control" placeholder="Your land area" value="{{ Input::old('land_area') }}">
+                          <input name="land_area" type="text" class="form-control" value="{{ Input::old('land_area') }}">
                         </div>
                         <div class="form-group">
                           <label>Property Area</label>
-                          <input name="property_area" type="text" class="form-control" placeholder="Your property area" value="{{ Input::old('property_area') }}">
+                          <input name="property_area" type="text" class="form-control" value="{{ Input::old('property_area') }}">
                         </div>
                         <div class="form-group">
                           <label>No. of Bedrooms</label>
-                          <input name="no_of_bedroom" type="text" class="form-control" placeholder="Your number of bedrooms" value="{{ Input::old('no_of_bedroom') }}">
+                          <input name="no_of_bedroom" type="text" class="form-control" value="{{ Input::old('no_of_bedroom') }}">
                         </div>
                         <div class="form-group">
                           <label>No. of Bathrooms</label>
-                          <input name="no_of_bathroom" type="text" class="form-control" placeholder="Your number of bathrooms" value="{{ Input::old('no_of_bathroom') }}">
+                          <input name="no_of_bathroom" type="text" class="form-control" value="{{ Input::old('no_of_bathroom') }}">
                         </div>
                         <div class="form-group">
                           <label>Total Built Area</label>
-                          <input name="total_built_area" type="text" class="form-control" placeholder="Your total built area" value="{{ Input::old('total_built_area') }}">
+                          <input name="total_built_area" type="text" class="form-control" value="{{ Input::old('total_built_area') }}">
                         </div>
                         <a href="{{route('muteena')}}" class="btn btn-default">Back</a>
                         <button type="submit" class="btn btn-sml btn-primary">Submit</button>

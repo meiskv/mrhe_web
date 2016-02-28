@@ -1,5 +1,6 @@
 @extends('admin.template.main')
 @section('content')
+@section('title', 'Al Muteena 397')
 <div class="clearfix"></div>
                     <div class="row">
                     @include('messages')

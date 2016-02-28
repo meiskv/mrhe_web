@@ -1,11 +1,12 @@
 @extends('admin.template.main')
 @section('content')
+@section('title', 'Al Muhesnah 4th')
                 <div class="clearfix"></div>
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h2>Creating Data<small>for Al Muhesnah</small></h2>
+                                    <h2>Creating Data<small>for Al Muhesnah 4th</small></h2>
                                     <div class="clearfix"></div>
                                 </div>
                 <div class="box-body">
