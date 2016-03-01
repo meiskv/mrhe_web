@@ -11,6 +11,7 @@ use App\Models\Role;
 use App\Models\Table;
 use App\Models\Land;
 use App\Models\Muteena;
+use App\Models\Fiveland;
 use Yajra\Datatables\Datatables;
 
 class MuteenaController extends Controller
@@ -25,15 +26,15 @@ class MuteenaController extends Controller
     {
         $muteena = Muteena::find($id);
         $user = User::find($id);
-        $land = Land::all();
+        $fland = Fiveland::all();
 
-        return view('admin.muteena.edit',compact('muteena','user','land'));
+        return view('admin.muteena.edit',compact('muteena','user','fland'));
     }
 
     public function create()
     {
-        $land = Land::all();
-        return view('admin.muteena.create',compact('land'));
+        $fland = Fiveland::all();
+        return view('admin.muteena.create',compact('fland'));
     }
 
     public function store(Request $request)

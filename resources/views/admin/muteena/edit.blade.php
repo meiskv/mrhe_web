@@ -17,7 +17,7 @@
                           <label>Land Number</label>
                           <select name="land_number_id" class="js-example-basic-single form-control">
                             <option selected>{{$muteena->land_number_id}}</option>
-                       @foreach ($land as $landdata)
+                       @foreach ($fland as $landdata)
                             <option value="{{ $landdata->land_number }} | {{ $landdata->style }}">{{ $landdata->land_number }} | {{ $landdata->style }}</option>
                              @endforeach
                           </select>
