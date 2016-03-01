@@ -773,11 +773,12 @@ li.current-page a {
     width: 100%;
     color: #ECF0F1 !important;
     margin-left: 0 !important;
-    line-height: 59px;
+    /*line-height: 59px;*/
     display: block;
     height: 55px;
     margin: 0;
     padding-left: 10px;
+    background: #fff;
 }
 
 .site_title:hover,

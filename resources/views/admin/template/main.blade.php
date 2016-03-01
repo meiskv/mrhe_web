@@ -61,7 +61,10 @@
                   <div class="left_col scroll-view">
 
                       <div class="navbar nav_title" style="border: 0;">
-                          <a href="{{url('admin')}}" class="site_title"><span>MRHE CMS</span></a>
+                          <a href="{{url('admin')}}" class="site_title">
+                          <img src="{{ URL::asset('main/images/mrhe_logo.png')}}" alt="..." class="mrhe_md">
+                          <img src="{{ URL::asset('main/images/mrhe_sm_logo.png')}}" alt="..." class="mrhe_sm">
+                          </a>
                       </div>
 
 

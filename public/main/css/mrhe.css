@@ -67,3 +67,24 @@
 	}
 }
 
+.mrhe_md{
+	width: 218px;
+}
+.mrhe_sm{
+	width: 50px;
+	padding-top: 2.5px;
+}
+
+.nav-sm .mrhe_md {
+	display: none;
+}
+
+.nav-sm .main_menu_side {
+    padding-top: 26px;
+}
+
+.nav-md .main_menu_side {
+    padding: 0;
+}
+
+
