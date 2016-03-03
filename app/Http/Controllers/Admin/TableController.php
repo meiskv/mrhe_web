@@ -43,8 +43,10 @@ class TableController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'land_number_id'        => 'required',
+            'land_number_id'        => 'required|unique:tableone,land_number_id',
             'property_no'           => 'required',
+            'plan_type'             => 'required',
+            'style'                 => 'required',
             'land_area'             => 'required',
             'property_area'         => 'required',
             'no_of_bedroom'         => 'required',
@@ -55,6 +57,8 @@ class TableController extends Controller
         $data = [
             'land_number_id'        => $request->input('land_number_id'),
             'property_no'           => $request->input('property_no'),
+            'plan_type'             => $request->input('plan_type'),
+            'style'                 => $request->input('style'),
             'land_area'             => $request->input('land_area'),
             'property_area'         => $request->input('property_area'),
             'no_of_bedroom'         => $request->input('no_of_bedroom'),
@@ -70,8 +74,10 @@ class TableController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'land_number_id'        => 'required',
+            'land_number_id'        => 'required|unique:tableone,land_number_id,'.$id,
             'property_no'           => 'required',
+            'plan_type'             => 'required',
+            'style'                 => 'required',
             'land_area'             => 'required',
             'property_area'         => 'required',
             'no_of_bedroom'         => 'required',
@@ -82,6 +88,8 @@ class TableController extends Controller
         $table           = Table::find($id);
         $table->land_number_id      = $request->input('land_number_id');
         $table->property_no         = $request->input('property_no');
+        $table->plan_type           = $request->input('plan_type');
+        $table->style               = $request->input('style');
         $table->land_area           = $request->input('land_area');
         $table->property_area       = $request->input('property_area');
         $table->no_of_bedroom       = $request->input('no_of_bedroom');

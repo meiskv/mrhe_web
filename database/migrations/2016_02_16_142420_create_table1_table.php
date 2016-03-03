@@ -16,6 +16,8 @@ class CreateTable1Table extends Migration
             $table->increments('id');
             $table->string('land_number_id')->unique();
             $table->string('property_no');
+            $table->string('plan_type');
+            $table->string('style');
             $table->string('land_area');
             $table->string('property_area');
             $table->string('no_of_bedroom');

@@ -11,6 +11,8 @@ class Muteena extends Model
     protected $fillable = [
     'land_number_id',
     'property_no',
+    'plan_type',
+    'style',
     'land_area',
     'property_area',
     'no_of_bedroom',

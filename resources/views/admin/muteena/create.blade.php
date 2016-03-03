@@ -18,13 +18,21 @@
                           <select name="land_number_id" class="js-example-basic-single form-control">
                                   <option disabled selected>Select your land number</option>
                              @foreach ($fland as $landdata)
-                                  <option value="{{ $landdata->land_number }}">{{ $landdata->land_number }} | {{ $landdata->style }}</option>
+                                  <option value="{{ $landdata->land_number }}">{{ $landdata->land_number }}</option>
                              @endforeach
                           </select>
                         </div>
                         <div class="form-group">
                           <label>Property No.</label>
                           <input name="property_no" type="text" class="form-control" value="{{ Input::old('property_no') }}">
+                        </div>
+                        <div class="form-group">
+                          <label>Plan Type</label>
+                          <input name="plan_type" type="text" class="form-control" value="{{ Input::old('plan_type') }}">
+                        </div>
+                        <div class="form-group">
+                          <label>Style</label>
+                          <input name="style" type="text" class="form-control" value="{{ Input::old('style') }}">
                         </div>
                         <div class="form-group">
                           <label>Land Area</label>

@@ -15,6 +15,8 @@
                                               <tr>
                                                   <th>Land Number</th>
                                                   <th>Property No</th>
+                                                  <th>Plan Type</th>
+                                                  <th>Style</th>
                                                   <th>Land Area</th>
                                                   <th>Property Area</th>
                                                   <th>No. of Bedrooms</th>
@@ -40,6 +42,8 @@
           columns: [
               { data: 'land_number_id', name: 'land_number_id' },
               { data: 'property_no', name: 'property_no' },
+              { data: 'plan_type', name: 'plan_type' },
+              { data: 'style', name: 'style' },
               { data: 'land_area', name: 'land_area' },
               { data: 'property_area', name: 'property_area' },
               { data: 'no_of_bedroom', name: 'no_of_bedroom' },
