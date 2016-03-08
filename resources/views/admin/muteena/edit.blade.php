@@ -24,35 +24,35 @@
                         </div>
                         <div class="form-group">
                           <label>Property No.</label>
-                          <input name="property_no" type="text" class="form-control" placeholder="Your name" value="{{$muteena->property_no}}">
+                          <input name="property_no" type="text" class="form-control" value="{{$muteena->property_no}}">
                         </div>
                         <div class="form-group">
                           <label>Plan Type</label>
-                          <input name="plan_type" type="text" class="form-control" placeholder="Your name" value="{{$muteena->plan_type}}">
+                          <input name="plan_type" type="text" class="form-control" value="{{$muteena->plan_type}}">
                         </div>
                         <div class="form-group">
                           <label>Style</label>
-                          <input name="style" type="text" class="form-control" placeholder="Your name" value="{{$muteena->style}}">
+                          <input name="style" type="text" class="form-control" value="{{$muteena->style}}">
                         </div>
                         <div class="form-group">
                           <label>Land Area</label>
-                          <input name="land_area" type="text" class="form-control" placeholder="Your name" value="{{$muteena->land_area}}">
+                          <input name="land_area" type="text" class="form-control" value="{{$muteena->land_area}}">
                         </div>
                         <div class="form-group">
                           <label>Property Area</label>
-                          <input name="property_area" type="text" class="form-control" placeholder="Your name" value="{{$muteena->property_area}}">
+                          <input name="property_area" type="text" class="form-control" value="{{$muteena->property_area}}">
                         </div>
                         <div class="form-group">
                           <label>No. of Bedrooms</label>
-                          <input name="no_of_bedroom" type="text" class="form-control" placeholder="Your name" value="{{$muteena->no_of_bedroom}}">
+                          <input name="no_of_bedroom" type="text" class="form-control" value="{{$muteena->no_of_bedroom}}">
                         </div>
                         <div class="form-group">
                           <label>No. of Bathrooms</label>
-                          <input name="no_of_bathroom" type="text" class="form-control" placeholder="Your name" value="{{$muteena->no_of_bathroom}}">
+                          <input name="no_of_bathroom" type="text" class="form-control" value="{{$muteena->no_of_bathroom}}">
                         </div>
                         <div class="form-group">
                           <label>Total Built Area</label>
-                          <input name="total_built_area" type="text" class="form-control" placeholder="Your name" value="{{$muteena->total_built_area}}">
+                          <input name="total_built_area" type="text" class="form-control" value="{{$muteena->total_built_area}}">
                         </div>
                         <a href="{{route('muteena')}}" class="btn btn-default">Back</a>
                         <button type="submit" class="btn btn-sml btn-primary">Update</button>

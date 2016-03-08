@@ -41,14 +41,8 @@ class MuteenaController extends Controller
     {
         $this->validate($request, [
             'land_number_id'        => 'required|unique:muteena,land_number_id',
-            'property_no'           => 'required',
-            'plan_type'           => 'required',
-            'style'           => 'required',
-            'land_area'             => 'required',
-            'property_area'         => 'required',
-            'no_of_bedroom'         => 'required',
-            'no_of_bathroom'        => 'required',
-            'total_built_area'      => 'required'
+            'plan_type'             => 'required',
+            'style'                 => 'required'
         ]);
 
         $data = [
@@ -75,14 +69,8 @@ class MuteenaController extends Controller
       
         $this->validate($request, [
             'land_number_id'        => 'required|unique:muteena,land_number_id,'.$id,
-            'property_no'           => 'required',
             'plan_type'             => 'required',
-            'style'                 => 'required',
-            'land_area'             => 'required',
-            'property_area'         => 'required',
-            'no_of_bedroom'         => 'required',
-            'no_of_bathroom'        => 'required',
-            'total_built_area'      => 'required'
+            'style'                 => 'required'
         ]);
 
         $table           = Muteena::find($id);
