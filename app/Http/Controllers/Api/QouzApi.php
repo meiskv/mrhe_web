@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\Table;
+use App\Models\Qouz;
 
 
-class Muteena300Controller extends Controller
+class QouzApi extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +18,7 @@ class Muteena300Controller extends Controller
      */
     public function index()
     {
-        return Table::paginate(10);
+        return Qouz::paginate(10);
     }
 
     /**
@@ -35,30 +35,32 @@ class Muteena300Controller extends Controller
         // $b = Table::find($id);
         // echo dd($b);
 
-        $data = Table::where('land_number_id', $id)->first();
+        $data = Qouz::where('apartment_code', $id)->first();
         
-
         if (!$data){
             //return response()->json(['error' => ['code' => '404', 'message' => 'Data not found!']]);
             echo "Data not found!";
         }else{
-            //return response()->json(['data' => Table::find($id)]);
+            // return response()->json(['data' => $data]);
              echo 'Search Completed';
              echo "|";
-             echo $data['land_number_id'];
+             echo $data['apartment_code'];
              echo "|";
-             echo $data['property_no'];
+             echo $data['building_no'];
              echo "|";
-             echo $data['land_area'];
+             echo $data['apartment_no'];
              echo "|";
-             echo $data['property_area'];
+             echo $data['no_of_bedrooms'];
              echo "|";
-             echo $data['no_of_bedroom'];
+             echo $data['floor_no'];
              echo "|";
-             echo $data['no_of_bathroom'];
+             echo $data['no_of_bathrooms'];
              echo "|";
-             echo $data['total_built_area'];
+             echo $data['area'];
              echo "|";
+             echo $data['balcony'];
+             echo "|";
+
         }
         
     }

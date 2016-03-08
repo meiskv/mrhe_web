@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\Table;
+use App\Models\Muteena;
 
 
-class Muteena300Controller extends Controller
+class Muteena500 extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +18,7 @@ class Muteena300Controller extends Controller
      */
     public function index()
     {
-        return Table::paginate(10);
+        return Muteena::paginate(10);
     }
 
     /**
@@ -35,14 +35,13 @@ class Muteena300Controller extends Controller
         // $b = Table::find($id);
         // echo dd($b);
 
-        $data = Table::where('land_number_id', $id)->first();
+        $data = Muteena::where('land_number_id', $id)->first();
         
-
         if (!$data){
             //return response()->json(['error' => ['code' => '404', 'message' => 'Data not found!']]);
             echo "Data not found!";
         }else{
-            //return response()->json(['data' => Table::find($id)]);
+            // return response()->json(['data' => $data]);
              echo 'Search Completed';
              echo "|";
              echo $data['land_number_id'];

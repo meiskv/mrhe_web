@@ -87,8 +87,11 @@ Route::group(['prefix' => 'api/v1' ], function () {
     Route::resource('user','Api\UserApiController');
 });
 
-Route::group(['prefix' => 'api/muteena300' ], function () {
-    Route::resource('data','Api\Muteena300Controller');
+Route::group(['prefix' => 'api/mrhe' ], function () {
+    Route::resource('muteena300','Api\Muteena300Controller');
+    Route::resource('muteena500','Api\Muteena500');
+    Route::resource('muhesnah','Api\MuhesnahDb');
+    Route::resource('qouz','Api\QouzApi');
 });
 
 Route::controllers(['auth' => 'Auth\AuthController']);
