@@ -12,10 +12,7 @@ body.nav-sm .container.body .right_col {
     z-index: 2;
 }
 .right_col{
-    position: relative;
-    display: inline-block;
     min-height: 719px;
-    width: 100%;
 }
 
 body.nav-sm .navbar.nav_title {
