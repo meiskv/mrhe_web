@@ -11,7 +11,13 @@ body.nav-sm .container.body .right_col {
     margin-left: 70px;
     z-index: 2;
 }
-.right_col{min-height: 1000px;}
+.right_col{
+    position: relative;
+    display: inline-block;
+    min-height: 719px;
+    width: 100%;
+}
+
 body.nav-sm .navbar.nav_title {
     width: 70px;
 }
@@ -192,7 +198,6 @@ body.nav-sm .menu_section h3 {
     
     background: #EDEDED;
     border-bottom: 1px solid #D9DEE4;
-    margin-bottom: 10px;
     width: 100%;
 }
 
