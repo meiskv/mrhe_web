@@ -40,7 +40,7 @@ class QouzController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'apartment_no'             => 'required',
+            'apartment_no'             => 'required|unique:qouz,apartment_no',
             'no_of_bedrooms'         => 'required',
             'no_of_bathrooms'         => 'required',
             'floor_no'         => 'required',
