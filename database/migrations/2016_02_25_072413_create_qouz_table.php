@@ -14,8 +14,6 @@ class CreateQouzTable extends Migration
     {
         Schema::create('qouz', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('apartment_code')->unique();
-            $table->string('building_no');
             $table->string('apartment_no');
             $table->string('no_of_bedrooms');
             $table->string('floor_no');

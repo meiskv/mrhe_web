@@ -40,8 +40,6 @@ class QouzController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'apartment_code'        => 'required',
-            'building_no'           => 'required',
             'apartment_no'             => 'required',
             'no_of_bedrooms'         => 'required',
             'no_of_bathrooms'         => 'required',
@@ -51,8 +49,6 @@ class QouzController extends Controller
         ]);
 
         $data = [
-            'apartment_code'        => $request->input('apartment_code'),
-            'building_no'           => $request->input('building_no'),
             'apartment_no'             => $request->input('apartment_no'),
             'no_of_bedrooms'         => $request->input('no_of_bedrooms'),
             'floor_no'         => $request->input('floor_no'),
@@ -105,8 +101,6 @@ class QouzController extends Controller
     public function update(Request $request, $id)
     {
          $this->validate($request, [
-            'apartment_code'        => 'required',
-            'building_no'           => 'required',
             'apartment_no'          => 'required',
             'no_of_bedrooms'        => 'required',
             'floor_no'              => 'required',
@@ -116,8 +110,6 @@ class QouzController extends Controller
         ]);
 
         $table                      = Qouz::find($id);
-        $table->apartment_code      = $request->input('apartment_code');
-        $table->building_no         = $request->input('building_no');
         $table->apartment_no        = $request->input('apartment_no');
         $table->no_of_bedrooms      = $request->input('no_of_bedrooms');
         $table->floor_no            = $request->input('floor_no');

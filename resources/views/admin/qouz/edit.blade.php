@@ -14,14 +14,6 @@
                     {!!Form::open(['url' => route('admin.qouz.update', $qouz->id), 'method' => 'put', 'role' => 'form'])!!}
                         <!-- text input -->
                         <div class="form-group">
-                          <label>Apartment Code</label>
-                          <input name="apartment_code" type="text" class="form-control" placeholder="Your apartment code" value="{{$qouz->apartment_code}}">
-                        </div>
-                        <div class="form-group">
-                          <label>Building No.</label>
-                          <input name="building_no" type="text" class="form-control" placeholder="Your building number" value="{{$qouz->building_no}}">
-                        </div>
-                        <div class="form-group">
                           <label>Apartment No.</label>
                           <input name="apartment_no" type="text" class="form-control" placeholder="Your apartment number" value="{{$qouz->apartment_no}}">
                         </div>

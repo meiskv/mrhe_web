@@ -35,7 +35,7 @@ class QouzApi extends Controller
         // $b = Table::find($id);
         // echo dd($b);
 
-        $data = Qouz::where('apartment_code', $id)->first();
+        $data = Qouz::where('apartment_no', $id)->first();
         
         if (!$data){
             //return response()->json(['error' => ['code' => '404', 'message' => 'Data not found!']]);
@@ -43,10 +43,6 @@ class QouzApi extends Controller
         }else{
             // return response()->json(['data' => $data]);
              echo 'Search Completed';
-             echo "|";
-             echo $data['apartment_code'];
-             echo "|";
-             echo $data['building_no'];
              echo "|";
              echo $data['apartment_no'];
              echo "|";

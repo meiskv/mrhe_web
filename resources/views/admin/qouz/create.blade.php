@@ -14,14 +14,6 @@
                     {!!Form::open(['url' => route('admin.qouz.store')])!!}
                         <!-- text input -->
                         <div class="form-group">
-                          <label>Apartment Code</label>
-                          <input name="apartment_code" type="text" class="form-control" value="{{ Input::old('apartment_code') }}">
-                        </div>
-                        <div class="form-group">
-                          <label>Building No.</label>
-                          <input name="building_no" type="text" class="form-control" value="{{ Input::old('building_no') }}">
-                        </div>
-                        <div class="form-group">
                           <label>Apartment No.</label>
                           <input name="apartment_no" type="text" class="form-control" value="{{ Input::old('apartment_no') }}">
                         </div>
