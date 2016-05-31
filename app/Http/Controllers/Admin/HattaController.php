@@ -52,7 +52,11 @@ class HattaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $hatta = Hatta::find($id);
+        // $user = User::find($id);
+        $fland = Hatta::all();
+
+        return view('admin.hatta.edit',compact('hatta','fland'));
     }
 
     /**

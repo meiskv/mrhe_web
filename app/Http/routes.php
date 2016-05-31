@@ -103,6 +103,7 @@ Route::group(['prefix' => 'api/mrhe' ], function () {
     Route::resource('muteena500','Api\Muteena500');
     Route::resource('muhesnah','Api\MuhesnahDb');
     Route::resource('qouz','Api\QouzApi');
+    Route::resource('hatta','Api\HattaController');
 });
 
 Route::controllers(['auth' => 'Auth\AuthController']);

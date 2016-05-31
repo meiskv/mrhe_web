@@ -11,7 +11,7 @@
                                 </div>
                 <div class="box-body">
                     @include('messages')
-                    {!!Form::open(['url' => route('admin.muteena.store')])!!}
+                    {!!Form::open(['url' => route('admin.hatta.store')])!!}
                         <!-- text input -->
                         <div class="form-group">
                           <label>Land Number</label>
