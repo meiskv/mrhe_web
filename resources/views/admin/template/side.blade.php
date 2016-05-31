@@ -38,6 +38,12 @@
                                           <li><a href="{{ route('admin.qouz.index') }}">List Data</a>
                                       </ul>
                                   </li>
+                                  <li><a><i class="fa fa-map-marker"></i>Hatta Makan<span class="fa fa-chevron-down"></span></a>
+                                      <ul class="nav child_menu" style="display: none">
+                                          <li><a href="{{ route('admin.hatta.create') }}">Create Data</a>
+                                          <li><a href="{{ route('hatta') }}">List Data</a>
+                                      </ul>
+                                  </li>
                               </ul>
                           </div>
                       </div>

@@ -81,6 +81,17 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'] ], function () {
         ]);
         /* ----Muteena Route End---- */
 
+        /* Hatta Makan Route & Controller */
+        Route::resource('hatta','Admin\HattaController',
+            ['only'=>['edit','store','update','create']]
+            );
+
+        Route::controller('hatta','Admin\HattaController', [
+            'anyData' => 'hatta.data',
+            'getIndex' => 'hatta',
+            ]);
+        /* ----Muteena Route End---- */
+
 });
 
 Route::group(['prefix' => 'api/v1' ], function () {
