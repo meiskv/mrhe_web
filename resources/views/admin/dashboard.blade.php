@@ -39,7 +39,7 @@
                                 </div>
 
                                 <div class="col-md-2 col-sm-2 col-xs-12 form-group mt-mid">
-                                	<a href="/">
+                                	<a href="{{ route('hatta') }}">
                                     	<img class="dash-ico" src="{{ URL::asset('img/market-05.png')}}"/>
                                     	<h3>Hatta Makan 346</h3>
                                     </a>
