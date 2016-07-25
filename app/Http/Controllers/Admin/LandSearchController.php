@@ -6,12 +6,12 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Models\Hatta;
+use App\Models\Landsearch;
+use App\Models\threelandareas;
 use Yajra\Datatables\Datatables;
 
-class HattaController extends Controller
+class LandSearchController extends Controller
 {
-
     /**
      * Show the form for creating a new resource.
      *
@@ -19,7 +19,8 @@ class HattaController extends Controller
      */
     public function create()
     {
-        return view('admin.hatta.create');
+         $landareas = threelandareas::all();
+        return view('admin.landsearch.create',compact('landareas'));
     }
 
     /**
@@ -30,7 +31,25 @@ class HattaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'land_number_id'        => 'required|unique:landsearch,land_number_id'
+        ]);
+
+        $data = [
+            'land_number_id'   => $request->input('land_number_id'),
+            'land_use'         => $request->input('land_use'),
+            'plan'             => $request->input('plan'),
+            'beneficiary'      => $request->input('beneficiary'),
+            'owners_name'      => $request->input('owners_name'),
+            'coordinates'      => $request->input('coordinates'),
+            'areasqft'         => $request->input('areasqft'),
+            'areasqm'          => $request->input('areasqm'),
+            'areaname'         => $request->input('areaname')
+        ];
+
+        landsearch::create($data);
+
+        return redirect()->route('lands')->with('success', 'Successfully created!');
     }
 
     /**
@@ -52,11 +71,11 @@ class HattaController extends Controller
      */
     public function edit($id)
     {
-        $hatta = Hatta::find($id);
+        $landsearch = landsearch::find($id);
         // $user = User::find($id);
-        $fland = Hatta::all();
+        $landareas = threelandareas::all();
 
-        return view('admin.hatta.edit',compact('hatta','fland'));
+        return view('admin.hatta.edit',compact('landsearch','landareas'));
     }
 
     /**
@@ -89,7 +108,7 @@ class HattaController extends Controller
         $table->updated_at = date('Y-m-d');
         $table->save();
 
-        return redirect()->route('hatta')->with('success', 'Successfully updated!');
+        return redirect()->route('landsearch')->with('success', 'Successfully updated!');
     }
 
     /**
@@ -105,13 +124,13 @@ class HattaController extends Controller
 
     public function getIndex()
     {
-        return view('admin.hatta.list');
+        return view('admin.landsearch.list');
     }
 
     public function anyData()
     {
 
-        $data = Hatta::all();
+        $data = landsearch::all();
         //return Datatables::of(User::select('*'))->make(true);
         return Datatables::of($data)
          ->addColumn('action', function ($user) {

@@ -92,6 +92,17 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'] ], function () {
             ]);
         /* ----Muteena Route End---- */
 
+        /* LandSearch Route & Controller */
+        Route::resource('landsearch','Admin\LandSearchController',
+            ['only'=>['edit','store','update','create']]
+            );
+
+        Route::controller('landsearch','Admin\LandSearchController', [
+            'anyData' => 'lands.data',
+            'getIndex' => 'lands',
+            ]);
+        /* ----Muteena Route End---- */
+
 });
 
 Route::group(['prefix' => 'api/v1' ], function () {
@@ -104,6 +115,7 @@ Route::group(['prefix' => 'api/mrhe' ], function () {
     Route::resource('muhesnah','Api\MuhesnahDb');
     Route::resource('qouz','Api\QouzApi');
     Route::resource('hatta','Api\HattaController');
+    Route::resource('landsearch','Api\Landsearchapi');
 });
 
 Route::controllers(['auth' => 'Auth\AuthController']);

@@ -44,6 +44,12 @@
                                           <li><a href="{{ route('hatta') }}">List Data</a>
                                       </ul>
                                   </li>
+                                  <li><a><i class="fa fa-map-marker"></i>Land Search<span class="fa fa-chevron-down"></span></a>
+                                      <ul class="nav child_menu" style="display: none">
+                                          <li><a href="{{ route('admin.landsearch.create') }}">Create Data</a>
+                                          <li><a href="{{ route('lands') }}">List Data</a>
+                                      </ul>
+                                  </li>
                               </ul>
                           </div>
                       </div>
