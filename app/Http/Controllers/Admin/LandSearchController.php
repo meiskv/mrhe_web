@@ -75,7 +75,7 @@ class LandSearchController extends Controller
         // $user = User::find($id);
         $landareas = threelandareas::all();
 
-        return view('admin.hatta.edit',compact('landsearch','landareas'));
+        return view('admin.landsearch.edit',compact('landsearch','landareas'));
     }
 
     /**
@@ -87,28 +87,29 @@ class LandSearchController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
+        //*******///
         $this->validate($request, [
-            'land_number_id'        => 'required|unique:hatta,land_number_id,'.$id,
-            'style'                 => 'required'
+            'land_number_id'        => 'required|unique:landsearch,land_number_id,'.$id
         ]);
 
-        $table           = Hatta::find($id);
+        $table           = landsearch::find($id);
         $table->land_number_id      = $request->input('land_number_id');
-        $table->property_no         = $request->input('property_no');
-        $table->plan_type         = $request->input('plan_type');
-        $table->style         = $request->input('style');
-        $table->land_area           = $request->input('land_area');
-        $table->property_area       = $request->input('property_area');
-        $table->no_of_bedroom       = $request->input('no_of_bedroom');
-        $table->no_of_bathroom      = $request->input('no_of_bathroom');
-        $table->total_built_area    = $request->input('total_built_area');
+        $table->land_use         = $request->input('land_use');
+        $table->plan         = $request->input('plan');
+        $table->beneficiary         = $request->input('beneficiary');
+        $table->owners_name           = $request->input('owners_name');
+        $table->coordinates       = $request->input('coordinates');
+        $table->areasqft       = $request->input('areasqft');
+        $table->areasqm      = $request->input('areasqm');
+        $table->areaname    = $request->input('areaname');
 
 
 
         $table->updated_at = date('Y-m-d');
         $table->save();
 
-        return redirect()->route('landsearch')->with('success', 'Successfully updated!');
+        return redirect()->route('lands')->with('success', 'Successfully updated!');
     }
 
     /**
@@ -134,7 +135,7 @@ class LandSearchController extends Controller
         //return Datatables::of(User::select('*'))->make(true);
         return Datatables::of($data)
          ->addColumn('action', function ($user) {
-                return '<a href="hatta/'.$user->id.'/edit" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a>';})
+                return '<a href="landsearch/'.$user->id.'/edit" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a>';})
         ->make(true);
     }
 }
