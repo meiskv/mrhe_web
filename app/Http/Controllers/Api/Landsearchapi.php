@@ -37,7 +37,7 @@ class Landsearchapi extends Controller
             // return response()->json(['data' => $data]);
              echo 'Search Completed';
              echo "|";
-             echo $data['land_user'];
+             echo $data['land_use'];
              echo "|";
              echo $data['plan'];
              echo "|";
@@ -45,7 +45,9 @@ class Landsearchapi extends Controller
              echo "|";
              echo $data['owners_name'];
              echo "|";
-             echo $data['coordinates'];
+             echo $data['longitude'];
+             echo "|";
+             echo $data['latitude'];
              echo "|";
              echo $data['areasqft'];
              echo "|";

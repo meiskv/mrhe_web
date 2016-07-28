@@ -41,7 +41,8 @@ class LandSearchController extends Controller
             'plan'             => $request->input('plan'),
             'beneficiary'      => $request->input('beneficiary'),
             'owners_name'      => $request->input('owners_name'),
-            'coordinates'      => $request->input('coordinates'),
+            'longitude'      => $request->input('longitude'),
+            'latitude'      => $request->input('latitude'),
             'areasqft'         => $request->input('areasqft'),
             'areasqm'          => $request->input('areasqm'),
             'areaname'         => $request->input('areaname')
@@ -99,7 +100,8 @@ class LandSearchController extends Controller
         $table->plan         = $request->input('plan');
         $table->beneficiary         = $request->input('beneficiary');
         $table->owners_name           = $request->input('owners_name');
-        $table->coordinates       = $request->input('coordinates');
+        $table->longitude       = $request->input('longitude');
+        $table->latitude       = $request->input('latitude');
         $table->areasqft       = $request->input('areasqft');
         $table->areasqm      = $request->input('areasqm');
         $table->areaname    = $request->input('areaname');

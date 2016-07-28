@@ -19,7 +19,8 @@ class CreateTableLandsearch extends Migration
             $table->string('plan');
             $table->string('beneficiary');
             $table->string('owners_name');
-            $table->string('coordinates');
+            $table->string('longitude');
+            $table->string('latitude');
             $table->string('areasqft');
             $table->string('areasqm');
             $table->string('areaname');

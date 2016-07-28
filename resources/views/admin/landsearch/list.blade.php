@@ -17,7 +17,8 @@
                                                   <th>Plan</th>
                                                   <th>Beneficiary</th>
                                                   <th>Owners Name</th>
-                                                  <th>Coordinates</th>
+                                                  <th>Longitude</th>
+                                                  <th>Latitude</th>
                                                   <th>Area Sq Ft</th>
                                                   <th>Area Sq Meter</th>
                                                   <th>Area Name</th>
@@ -44,7 +45,8 @@
               { data: 'plan', name: 'plan' },
               { data: 'beneficiary', name: 'beneficiary' },
               { data: 'owners_name', name: 'owners_name' },
-              { data: 'coordinates', name: 'coordinates' },
+              { data: 'longitude', name: 'longitude' },
+              { data: 'latitude', name: 'latitude' },
               { data: 'areasqft', name: 'areasqft' },
               { data: 'areasqm', name: 'areasqm' },
               { data: 'areaname', name: 'areaname' },
