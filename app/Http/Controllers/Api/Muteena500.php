@@ -42,13 +42,11 @@ class Muteena500 extends Controller
             echo "Data not found!";
         }else{
             // return response()->json(['data' => $data]);
-             echo 'Search Completed';
+              echo 'Search Completed';
              echo "|";
-             echo $data['land_number_id'];
+             echo $data['plan_type'];
              echo "|";
-             echo $data['property_no'];
-             echo "|";
-             echo $data['land_area'];
+             echo $data['style'];
              echo "|";
              echo $data['property_area'];
              echo "|";
@@ -56,7 +54,7 @@ class Muteena500 extends Controller
              echo "|";
              echo $data['no_of_bathroom'];
              echo "|";
-             echo $data['total_built_area'];
+             echo $data['land_number_id'];
              echo "|";
         }
         

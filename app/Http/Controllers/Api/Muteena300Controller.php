@@ -36,7 +36,22 @@ class Muteena300Controller extends Controller
         // echo dd($b);
 
         $data = Table::where('land_number_id', $id)->first();
-        
+
+// type
+// style
+// area
+// number of bedrooms
+// number of bathrooms
+// echo "|";
+// echo $data['property_no'];
+// echo "|";
+// echo $data['land_area'];
+// echo "|";
+// echo $data['property_area'];
+// echo "|";
+// echo $data['no_of_bedroom'];
+// echo "|";
+// echo $data['no_of_bathroom'];
 
         if (!$data){
             //return response()->json(['error' => ['code' => '404', 'message' => 'Data not found!']]);
@@ -45,11 +60,9 @@ class Muteena300Controller extends Controller
             //return response()->json(['data' => Table::find($id)]);
              echo 'Search Completed';
              echo "|";
-             echo $data['land_number_id'];
+             echo $data['plan_type'];
              echo "|";
-             echo $data['property_no'];
-             echo "|";
-             echo $data['land_area'];
+             echo $data['style'];
              echo "|";
              echo $data['property_area'];
              echo "|";
@@ -57,7 +70,7 @@ class Muteena300Controller extends Controller
              echo "|";
              echo $data['no_of_bathroom'];
              echo "|";
-             echo $data['total_built_area'];
+             echo $data['land_number_id'];
              echo "|";
         }
         

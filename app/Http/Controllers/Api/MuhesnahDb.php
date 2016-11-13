@@ -35,6 +35,11 @@ class MuhesnahDb extends Controller
         // $b = Table::find($id);
         // echo dd($b);
 
+// type/ building_no
+// number of bedrooms
+// number of bathrooms
+// area
+
         $data = Muhesnah::where('apartment_code', $id)->first();
         
         if (!$data){
@@ -46,15 +51,11 @@ class MuhesnahDb extends Controller
              echo "|";
              echo $data['building_no'];
              echo "|";
-             echo $data['apartment_no'];
-             echo "|";
-             echo $data['area'];
-             echo "|";
              echo $data['no_of_bedrooms'];
              echo "|";
              echo $data['no_of_bathrooms'];
              echo "|";
-             echo $data['balcony'];
+             echo $data['area'];
              echo "|";
 
         }
